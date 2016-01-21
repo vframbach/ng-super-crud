@@ -43,11 +43,12 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 app.controller('BooksIndexCtrl', ['$scope', 'Books', function ($scope, Books) {
   $scope.booksIndexTest = 'Connected to BooksIndexCtrl';
-  $scope.books = Books;
+  // $scope.books = Books;
   $scope.allBooks = Books.query();
 
    $scope.addBook = function() {
-		$scope.addBook.push($scope.addBook);
+		$scope.allBooks.push($scope.newBook);
+		$scope.newBook = {};
 	};
 
 	$scope.updateBook = function(bookId) {
