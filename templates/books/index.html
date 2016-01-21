@@ -1,0 +1,63 @@
+<h1>Take a book, leave a book!</h1>
+<h2>{{booksIndexTest}}</h2>
+<div class="row">
+	<div class="col-md-5">
+		<img class="book" src="book.jpg">
+	</div>
+	<div class="col-md-6">
+		<form ng-submit="addBook()">
+			<h4>Add a book</h4>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="addBook.title" placeholder="Title">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="addBook.author" placeholder="Author">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="addBook.image" placeholder="Image">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="addBook.releaseDate" placeholder="Release date">
+			</div>
+			
+			<input type="submit" class="btn btn-danger">
+		</form>
+	</div>
+</div>
+<br>
+	<div ng-repeat="book in allBooks">
+		<div class="row">
+			<div class="col-md-6">
+				<h3><a ng-href="/books/{{ book._id }}">{{ book.title }}</a></h3>
+				<h4>{{ book.author}}</h4>
+				<h4>{{ book.releaseDate}}</h4>
+				<a href="#" ng-click="updateBook(book._id)"><i class="glyphicon glyphicon-edit"></i>
+						</a>
+				<a href="#" ng-click="deleteBook(book._id)"><i class="glyphicon glyphicon-trash"></i>
+						</a>
+			</div>	
+			<br>
+			<div class="col-md-6">
+				<img class="books" src="{{ book.image }}">
+			</div>
+		</div>	
+	</div>
+	<div class="col-md-5">
+	<form ng-submit="updateBook()">
+			<h4>Update book</h4>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.title" placeholder="Title">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.author" placeholder="Author">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.image" placeholder="Image">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.releaseDate" placeholder="Release date">
+			</div>
+			
+			<input type="submit" class="btn btn-danger">
+		</form>
+	</div>	

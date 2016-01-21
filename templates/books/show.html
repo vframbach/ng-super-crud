@@ -1,0 +1,27 @@
+<h1>About the book</h1>
+<h4>Back to <a href="/">Home</a></h4>
+<h4>{{book.title}}</h4>
+<h5>{{ book.author }}</h5>
+<h5>{{book.releaseDate}}</h5>
+<img src="{{book.image">
+<a href="#" ng-click="updateBook(book._id)"><i class="glyphicon glyphicon-edit"></i></a>
+<a href="#" ng-click="deleteBook(book._id)"><i class="glyphicon glyphicon-trash"></i></a>
+<div class="col-md-5">
+	<form ng-submit="updateBook()">
+			<h4>Update book</h4>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.title" placeholder="Title">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.author" placeholder="Author">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.image" placeholder="Image">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" ng-model="updateBook.releaseDate" placeholder="Release date">
+			</div>
+			
+			<input type="submit" class="btn btn-danger">
+		</form>
+	</div>	
